@@ -1,6 +1,6 @@
-import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Resume from "./components/Resume";
 import Projects from "./pages/Projects";
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Navbar />
       <Home />
       <Projects />
+      <Resume />
     </>
   );
 }

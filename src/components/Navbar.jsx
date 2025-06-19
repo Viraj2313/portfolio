@@ -24,15 +24,6 @@ const Navbar = () => {
           <h1>Projects</h1>
         </Link>
         <Link
-          to="contact"
-          smooth={true}
-          offset={-120}
-          duration={500}
-          className="text-lg hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer"
-        >
-          <h1>Contact</h1>
-        </Link>
-        <Link
           to="resume"
           smooth={true}
           offset={-120}

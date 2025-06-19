@@ -5,18 +5,45 @@ const Projects = () => {
     {
       name: "Movie Pedia",
       description: `Movie Pedia is a React and ASP.NET Core app for exploring movies, 
-      viewing IMDb ratings, and getting AI-powered recommendations. It features a wishlist, 
-      like/dislike system, direct chat for sharing movies, a comments section for discussions, 
-      Google Social Login, and custom login`,
+    viewing IMDb ratings, and getting AI-powered recommendations. It features a wishlist, 
+    like/dislike system, direct chat for sharing movies, a comments section for discussions, 
+    Google Social Login, and custom login.`,
       gitHubLink: "https://github.com/Viraj2313/Movie-Pedia",
       livePreview: "https://moviepedia.virajdeveloper.online",
+      techStack: [
+        "React",
+        "ASP.NET Core",
+        "MySQL",
+        "Python",
+        "OMDB API",
+        "Vite",
+        "Docker",
+        "Mantine",
+      ],
+    },
+    {
+      name: "Password Manager",
+      description:
+        "A secure and modern password manager built to help users safely store and manage their credentials. This project focuses on clean design and robust security principles.",
+      gitHubLink: "https://github.com/Viraj2313/password-manager",
+      livePreview: "https://passwordmanager.virajdeveloper.online",
+      techStack: [
+        "React",
+        "ASP.NET Core",
+        "MySQL",
+        "Docker",
+        "Nginx",
+        "Ubuntu",
+        "GitHub Actions",
+      ],
     },
     {
       name: "Crypto Dashboard",
       description: `Crypto Dashboard is a website featuring live details of cryptocurrencies 
-        with respective graphs and analytics. It is built using React, Tailwind CSS, and Chart.js.`,
+      with respective graphs and analytics. It is built using React, Tailwind CSS, and Chart.js.`,
       gitHubLink: "https://github.com/Viraj2313/cyrpto-dashboard",
       livePreview: "",
+      techStack: ["React", "Tailwind CSS", "Chart.js", "REST API"],
     },
     {
       name: "Code editor",
@@ -25,6 +52,7 @@ const Projects = () => {
       livePreview: "",
     },
   ];
+
   return (
     <>
       <div className="mt-40 mb-10" id="projects">
@@ -37,6 +65,7 @@ const Projects = () => {
               description={project.description}
               gitHubLink={project.gitHubLink}
               livePreview={project.livePreview || ""}
+              techStack={project.techStack || ""}
             />
           ))}
         </div>
