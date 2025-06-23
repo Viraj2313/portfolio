@@ -1,12 +1,20 @@
-# React + Vite
+# [Portfolio Website](https://virajweb.duckdns.org/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code and configurations for my personal portfolio website.  
+Built using **React**, and served via **Nginx** on a Linux VM using **CI/CD** with GitHub Actions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Skills
 
-## Expanding the ESLint configuration
+- **Languages:** C++, C#, JavaScript, Python, SQL
+- **Frameworks & Libraries:** .NET, ASP.NET Core, Entity Framework Core, React, Tailwind CSS
+- **Databases:** MySQL, MSSQL
+- **Tools & Platforms:** GitHub Actions (CI/CD), Azure, Docker
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Connect with Me
+
+- [GitHub](https://github.com/Viraj2313)
+- [LinkedIn](https://www.linkedin.com/in/virajmahajan/)
