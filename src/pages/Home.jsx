@@ -26,7 +26,7 @@ const Home = () => {
             </h3>
             <h3 className="text-xl md:text-2xl text-gray-600">
               <span className="font-semibold">Other:</span> CI/CD (GitHub
-              Actions), Azure, Docker
+              Actions), Azure, Docker, Nginx, Linux
             </h3>
           </div>
 
