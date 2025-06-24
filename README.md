@@ -10,7 +10,7 @@ Built using **React**, and served via **Nginx** on a Linux VM using **CI/CD** wi
 - **Languages:** C++, C#, JavaScript, Python, SQL
 - **Frameworks & Libraries:** .NET, ASP.NET Core, Entity Framework Core, React, Tailwind CSS
 - **Databases:** MySQL, MSSQL
-- **Tools & Platforms:** GitHub Actions (CI/CD), Azure, Docker
+- **Tools & Platforms:** GitHub Actions (CI/CD), Azure, Docker, Nginx
 
 ---
 
