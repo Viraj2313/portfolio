@@ -1,13 +1,28 @@
 import React from "react";
 import Project from "../components/Project";
+
 const Projects = () => {
   const projects = [
     {
+      name: "PortableEncryptor",
+      description: `PortableEncryptor is a secure folder encryption tool that combines CLI encryption with browser-based decryption. Encrypt folders locally, upload to cloud drives safely, and decrypt on any device without installing software. Perfect for secure cloud storage with cross-device access.`,
+      gitHubLink: "https://github.com/Viraj2313/portable-encryptor",
+      livePreview: "",
+      techStack: [
+        "Python",
+        "Cryptography",
+        "JavaScript",
+        "Web Crypto API",
+        "AES-256-GCM",
+        "PBKDF2",
+      ],
+    },
+    {
       name: "Movie Pedia",
-      description: `Movie Pedia is a React and ASP.NET Core app for exploring movies, 
-    viewing IMDb ratings, and getting AI-powered recommendations. It features a wishlist, 
-    like/dislike system, direct chat for sharing movies, a comments section for discussions, 
-    Google Social Login, and custom login.`,
+      description: `Movie Pedia is a React and ASP.NET Core app for exploring movies,
+       viewing IMDb ratings, and getting AI-powered recommendations. It features a wishlist,
+       like/dislike system, direct chat for sharing movies, a comments section for discussions,
+       Google Social Login, and custom login.`,
       gitHubLink: "https://github.com/Viraj2313/Movie-Pedia",
       livePreview: "https://moviepedia.virajdeveloper.online",
       techStack: [
@@ -39,8 +54,8 @@ const Projects = () => {
     },
     {
       name: "Crypto Dashboard",
-      description: `Crypto Dashboard is a website featuring live details of cryptocurrencies 
-      with respective graphs and analytics. It is built using React, Tailwind CSS, and Chart.js.`,
+      description: `Crypto Dashboard is a website featuring live details of cryptocurrencies
+       with respective graphs and analytics. It is built using React, Tailwind CSS, and Chart.js.`,
       gitHubLink: "https://github.com/Viraj2313/cyrpto-dashboard",
       livePreview: "",
       techStack: ["React", "Tailwind CSS", "Chart.js", "REST API"],
