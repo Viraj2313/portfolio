@@ -56,20 +56,10 @@ const Projects = () => {
       livePreview: "",
       techStack: ["React", "Tailwind CSS", "Chart.js", "REST API"],
     },
-    {
-      name: "Code Editor",
-      description: `Code Editor, A code editor to compile your code right from your browser.`,
-      gitHubLink: "https://github.com/Viraj2313/code-editor",
-      livePreview: "",
-      techStack: ["JavaScript", "HTML", "CSS"],
-    },
   ];
 
   return (
-    <div
-      className="min-h-screen py-20 px-4 bg-gradient-to-br from-gray-50 to-white"
-      id="projects"
-    >
+    <div className="min-h-screen py-20 px-4" id="projects">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
