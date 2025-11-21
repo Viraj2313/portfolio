@@ -33,17 +33,17 @@ const Home = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-3 leading-tight">
               Hello, I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
-                Viraj
+                Viraj Mahajan
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-600 font-light mb-6">
-              Full Stack Developer
+              Software Engineer
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
           </div>
 
           <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
-            Passionate about crafting scalable web applications with modern
+            Passionate about crafting scalable software with modern
             technologies. I bring ideas to life through clean code and
             innovative solutions.
           </p>
