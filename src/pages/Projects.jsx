@@ -59,7 +59,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20 px-4" id="projects">
+    <div className="min-h-screen py-16 px-4" id="projects">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

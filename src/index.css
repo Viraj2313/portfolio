@@ -1,1 +1,17 @@
 @import "tailwindcss";
+.blog-post {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.7;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+}
+
+.blog-para {
+  margin-bottom: 1.4em;
+}
+
+.blog-post p {
+  text-align: left;
+}
