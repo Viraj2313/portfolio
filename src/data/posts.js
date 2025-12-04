@@ -33,6 +33,12 @@ export const blogPosts = [
         Overall using jupyter notebooks, pytorch, manipulating datasets, training models, and testing them was a fun and
         really insightful experience.
     </p>
+    <p class="blog-para">
+        Anyways thank you for reading folks ,I need to get back to work (actually, I need to sleep. It is 2:21 am as of writing). 
+    </p>
+    <p class="blog-para">
+        cheers, viraj
+    </p>
 </div>
 
     `,
