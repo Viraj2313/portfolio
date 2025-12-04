@@ -44,17 +44,19 @@ const Navbar = () => {
         isScrolled || !isHomePage ? "py-3" : "py-6"
       }`}
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-2 md:px-6">
         <nav
           className={`transition-all duration-300 border ${
-            isScrolled || !isHomePage ? "rounded-2xl py-3" : "rounded-3xl py-4"
+            isScrolled || !isHomePage
+              ? "rounded-2xl py-2 md:py-3"
+              : "rounded-3xl py-3 md:py-4"
           } 
           bg-white/80 backdrop-blur-xl shadow-lg border-white/20 supports-[backdrop-filter]:bg-white/30`}
         >
-          <div className="flex justify-center items-center space-x-8 md:space-x-12">
+          <div className="flex justify-center items-center space-x-2 sm:space-x-6 md:space-x-12">
             {navItems.map((item) => {
               const isActive = isHomePage && activeSection === item.to;
-              const commonClasses = `relative px-4 py-2 text-md font-medium tracking-wide cursor-pointer 
+              const commonClasses = `relative px-2 md:px-4 py-2 text-sm sm:text-sm md:text-base font-medium tracking-wide cursor-pointer 
                   transition-all duration-300 transform hover:scale-110 ${
                     isActive
                       ? "text-gray-900"
@@ -75,7 +77,7 @@ const Navbar = () => {
                   >
                     {item.label}
                     {isActive && (
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-full" />
+                      <div className="absolute bottom-0 left-0 right-0 h-[1.5px] md:h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-full" />
                     )}
                   </ScrollLink>
                 );
