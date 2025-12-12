@@ -67,21 +67,27 @@ const Footer = () => {
                 © {currentYear} Viraj. Crafted with passion and precision.
               </p>
               <div className="flex space-x-6 text-sm">
-                <Link to="home">
-                  <a className="text-gray-500 hover:text-gray-700 transition-colors font-light">
-                    Home
-                  </a>
+                <Link
+                  to="home"
+                  className="text-gray-500 hover:text-gray-700 transition-colors font-light"
+                >
+                  Home
                 </Link>
-                <Link to="projects">
-                  <a className="text-gray-500 hover:text-gray-700 transition-colors font-light">
-                    Projects
-                  </a>
+
+                <Link
+                  to="projects"
+                  className="text-gray-500 hover:text-gray-700 transition-colors font-light"
+                >
+                  Projects
                 </Link>
-                <Link to="resume">
-                  <a className="text-gray-500 hover:text-gray-700 transition-colors font-light">
-                    Resume
-                  </a>
+
+                <Link
+                  to="resume"
+                  className="text-gray-500 hover:text-gray-700 transition-colors font-light"
+                >
+                  Resume
                 </Link>
+
                 <a
                   href="mailto:virajmm231@gmail.com"
                   className="text-gray-500 hover:text-gray-700 transition-colors font-light"

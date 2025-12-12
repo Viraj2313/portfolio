@@ -1,18 +1,27 @@
 import { useEffect, useState, useRef } from "react";
 
 const CursorFollower = () => {
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    const touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    setIsTouch(touch);
+  }, []);
+
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isMoving, setIsMoving] = useState(false);
   const rafRef = useRef(null);
   const timeoutRef = useRef(null);
 
   useEffect(() => {
+    if (isTouch) return;
+
     let targetX = 0,
       targetY = 0,
       currentX = 0,
       currentY = 0;
 
-    const lerp = (start, end, factor) => start + (end - start) * factor;
+    const lerp = (s, e, f) => s + (e - s) * f;
 
     const animate = () => {
       currentX = lerp(currentX, targetX, 0.1);
@@ -37,17 +46,17 @@ const CursorFollower = () => {
       clearTimeout(timeoutRef.current);
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isTouch]);
 
-  const cursorStyle = {
-    left: `${position.x}px`,
-    top: `${position.y}px`,
-    transform: `translate(-50%, -50%) scale(${isMoving ? 0.9 : 1})`,
-  };
+  if (isTouch) return null;
 
   return (
     <div
-      style={cursorStyle}
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        transform: `translate(-50%, -50%) scale(${isMoving ? 0.9 : 1})`,
+      }}
       className="pointer-events-none fixed z-50 w-3 h-3 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-md transition-all duration-150 ease-out"
     />
   );
