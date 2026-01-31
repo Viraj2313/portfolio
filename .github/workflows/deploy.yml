@@ -25,21 +25,33 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Set up SSH key
-        uses: webfactory/ssh-agent@v0.5.3
+      - name: Prepare Server Directory
+        uses: appleboy/ssh-action@v1.0.0
         with:
-          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: mkdir -p /home/ubuntu/virajweb
 
-      - name: Add VM to known hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-
-      - name: Deploy to VM via SCP
+      - name: Copy files to VM
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
-          source: "dist/*"
-          target: "/var/www/html/portfolioweb"
+          source: "dist/,Dockerfile,nginx.conf,docker-compose.yml"
+          target: "/home/ubuntu/virajweb"
+
+      - name: Deploy with Docker
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
+            cd /home/ubuntu/virajweb
+
+            docker network create gateway_net || true
+
+            docker compose down
+            docker compose up -d --build

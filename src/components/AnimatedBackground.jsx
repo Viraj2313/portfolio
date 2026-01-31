@@ -39,14 +39,14 @@ const AnimatedBackground = ({ enabled = true }) => {
                     const x = i * spacing;
                     const y = j * spacing;
 
-                    // Wave distortion
+
                     const wave = Math.sin(x * 0.01 + timeRef.current) *
                         Math.cos(y * 0.01 + timeRef.current * 0.7);
 
                     const offsetX = wave * 3;
                     const offsetY = Math.cos(x * 0.01 + y * 0.01 + timeRef.current * 0.5) * 3;
 
-                    // Size pulsing based on wave
+
                     const sizeMod = 1 + wave * 0.3;
 
                     ctx.beginPath();
