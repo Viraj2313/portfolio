@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaCode,
   FaServer,
@@ -8,7 +8,75 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
+const TypewriterText = ({ text, delay = 0, onComplete, className = "", gradient = false }) => {
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const [complete, setComplete] = useState(false);
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => setStarted(true), delay * 1000);
+    return () => clearTimeout(startTimer);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!started) return;
+
+    if (visibleCount < text.length) {
+      const timer = setTimeout(() => {
+        setVisibleCount((prev) => prev + 1);
+      }, 40);
+      return () => clearTimeout(timer);
+    } else {
+      setComplete(true);
+      onComplete?.();
+    }
+  }, [started, visibleCount, text.length, onComplete]);
+
+  return (
+    <span className={`relative inline ${className}`}>
+      <style>{`
+        @keyframes cursorBlink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+      `}</style>
+      {text.split("").map((char, index) => {
+        if (index < visibleCount) {
+          return (
+            <span
+              key={index}
+              className={`inline-block ${gradient
+                ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600"
+                : ""
+                }`}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          );
+        }
+        return null;
+      })}
+      {started && !complete && (
+        <span
+          className="inline-block w-[2px] bg-gray-700"
+          style={{
+            height: '0.85em',
+            animation: 'cursorBlink 1s step-end infinite',
+            verticalAlign: 'baseline',
+            position: 'relative',
+            top: '0.1em'
+          }}
+        />
+      )}
+    </span>
+  );
+};
+
 const Home = () => {
+  const [line1Done, setLine1Done] = useState(false);
+  const [line2Done, setLine2Done] = useState(false);
+  const [line3Done, setLine3Done] = useState(false);
+
   const skills = {
     languages: ["C++", "C#", "JavaScript", "Python", "SQL"],
     frameworks: [
@@ -31,18 +99,37 @@ const Home = () => {
         <div className="text-center mb-10">
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-3 leading-tight">
-              Hello, I'm{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
-                Viraj Mahajan
-              </span>
+              <TypewriterText
+                text="Hello, I'm "
+                delay={0.3}
+                onComplete={() => setLine1Done(true)}
+              />
+              {line1Done && (
+                <TypewriterText
+                  text="Viraj Mahajan"
+                  delay={0}
+                  gradient={true}
+                  onComplete={() => setLine2Done(true)}
+                />
+              )}
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-600 font-light mb-6">
-              Software Engineer
+              {line2Done && (
+                <TypewriterText
+                  text="Software Engineer"
+                  delay={0.2}
+                  onComplete={() => setLine3Done(true)}
+                />
+              )}
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
+            <div
+              className={`w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8 transition-opacity duration-500 ${line3Done ? 'opacity-100' : 'opacity-0'}`}
+            ></div>
           </div>
 
-          <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          <p
+            className={`text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed transition-opacity duration-500 ${line3Done ? 'opacity-100' : 'opacity-0'}`}
+          >
             Passionate about crafting scalable software with modern
             technologies. I bring ideas to life through clean code and
             innovative solutions.
