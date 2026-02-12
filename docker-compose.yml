@@ -5,8 +5,6 @@ services:
     image: viraj231/virajweb:latest
     container_name: virajweb_nginx
     restart: always
-    ports:
-      - "80:80"
     networks:
       - gateway_net
 

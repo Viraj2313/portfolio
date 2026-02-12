@@ -36,6 +36,7 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: viraj231/virajweb:latest
 
       - name: Setup SSH
@@ -45,6 +46,9 @@ jobs:
 
       - name: Add VM to known hosts
         run: ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+      - name: Copy docker-compose.yml to VM
+        run: |
+          scp docker-compose.yml ubuntu@${{ secrets.HOST }}:/home/ubuntu/virajweb/docker-compose.yml
 
       - name: Deploy on VM
         run: |
