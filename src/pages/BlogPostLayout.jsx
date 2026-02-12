@@ -14,7 +14,7 @@ const BlogPostLayout = () => {
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-2xl text-gray-600">Post not found</h1>
+        <h1 className="text-2xl text-text-muted">Post not found</h1>
       </div>
     );
   }
@@ -24,24 +24,28 @@ const BlogPostLayout = () => {
       <div className="max-w-3xl mx-auto">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors mb-8"
+          style={{ fontFamily: "var(--font-mono)", fontSize: "0.9rem" }}
         >
-          <FaArrowLeft /> Back to Home
+          <FaArrowLeft /> back home
         </Link>
 
-        <div className="bg-[#FDFBF7] rounded-3xl p-8 md:p-12 shadow-xl border border-stone-200">
+        <div className="bg-bg-card rounded-3xl p-8 md:p-12 shadow-sm border border-[rgba(0,0,0,0.06)]">
           <header className="mb-10 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1
+              className="text-4xl md:text-5xl font-bold text-text-heading mb-6 leading-tight"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
               {post.title}
             </h1>
-            <div className="flex items-center justify-center gap-2 text-gray-500 font-medium">
-              <FaCalendar className="w-4 h-4 text-blue-500" />
-              <span>{post.date}</span>
+            <div className="flex items-center justify-center gap-2 text-text-muted">
+              <FaCalendar className="w-4 h-4 text-accent" />
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}>{post.date}</span>
             </div>
           </header>
 
           <article
-            className="prose prose-lg prose-blue max-w-none prose-headings:text-gray-800 prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700"
+            className="prose prose-lg max-w-none prose-headings:text-text-heading prose-p:text-text-body prose-p:leading-relaxed prose-li:text-text-body"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>

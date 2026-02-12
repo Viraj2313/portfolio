@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -40,28 +40,25 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || !isHomePage ? "py-3" : "py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage ? "py-3" : "py-6"
+        }`}
     >
       <div className="max-w-4xl mx-auto px-2 md:px-6">
         <nav
-          className={`transition-all duration-300 border ${
-            isScrolled || !isHomePage
+          className={`transition-all duration-300 border ${isScrolled || !isHomePage
               ? "rounded-2xl py-2 md:py-3"
               : "rounded-3xl py-3 md:py-4"
-          } 
-          bg-white/80 backdrop-blur-xl shadow-lg border-white/20 supports-[backdrop-filter]:bg-white/30`}
+            } 
+          bg-[#faf8f5]/80 backdrop-blur-xl shadow-sm border-[rgba(0,0,0,0.06)]`}
         >
           <div className="flex justify-center items-center space-x-2 sm:space-x-6 md:space-x-12">
             {navItems.map((item) => {
               const isActive = isHomePage && activeSection === item.to;
               const commonClasses = `relative px-2 md:px-4 py-2 text-sm sm:text-sm md:text-base font-medium tracking-wide cursor-pointer 
-                  transition-all duration-300 transform hover:scale-110 ${
-                    isActive
-                      ? "text-gray-900"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`;
+                  transition-all duration-300 transform hover:scale-110 ${isActive
+                  ? "text-accent"
+                  : "text-text-body hover:text-accent"
+                }`;
 
               if (isHomePage) {
                 return (
@@ -74,10 +71,11 @@ const Navbar = () => {
                     spy={true}
                     onSetActive={() => setActiveSection(item.to)}
                     className={commonClasses}
+                    style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}
                   >
                     {item.label}
                     {isActive && (
-                      <div className="absolute bottom-0 left-0 right-0 h-[1.5px] md:h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-full" />
+                      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent rounded-full animate-draw-line" />
                     )}
                   </ScrollLink>
                 );
@@ -87,6 +85,7 @@ const Navbar = () => {
                     key={item.to}
                     onClick={() => handleNavClick(item.to)}
                     className={commonClasses}
+                    style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}
                   >
                     {item.label}
                   </div>

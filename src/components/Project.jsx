@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
+
 const Project = ({
   name,
   description,
@@ -8,25 +9,28 @@ const Project = ({
   techStack = [],
 }) => {
   return (
-    <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+    <div className="bg-bg-card rounded-2xl p-8 border border-[rgba(0,0,0,0.06)] shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 group">
       <div className="flex justify-between items-start mb-6">
-        <h2 className="text-2xl font-semibold text-gray-900 group-hover:text-gray-800 transition-colors">
+        <h2
+          className="text-2xl font-semibold text-text-heading group-hover:text-accent transition-colors"
+          style={{ fontFamily: "var(--font-mono)" }}
+        >
           {name}
         </h2>
         <div className="flex gap-4">
           <a
             href={gitHubLink}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
+            className="flex items-center gap-2 text-text-muted hover:text-accent transition-colors duration-300"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub size={24} color="#333" />
-            <span className="text-sm font-medium">Code</span>
+            <FaGithub size={22} />
+            <span className="text-sm font-medium" style={{ fontFamily: "var(--font-mono)" }}>Code</span>
           </a>
           {livePreview && (
             <a
               href={livePreview}
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
+              className="flex items-center gap-2 text-text-muted hover:text-accent-teal transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,26 +47,24 @@ const Project = ({
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-              <span className="text-sm font-medium">Live</span>
+              <span className="text-sm font-medium" style={{ fontFamily: "var(--font-mono)" }}>Live</span>
             </a>
           )}
         </div>
       </div>
 
-      <p className="text-gray-600 leading-relaxed mb-6 font-light">
+      <p className="text-text-body leading-relaxed mb-6">
         {description}
       </p>
 
       {techStack.length > 0 && (
         <div>
-          <h3 className="text-sm font-medium text-gray-800 mb-3 tracking-wide uppercase">
-            Technologies
-          </h3>
           <div className="flex flex-wrap gap-2">
             {techStack.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-gray-50 text-gray-700 rounded-full text-sm border border-gray-200 hover:border-gray-300 transition-colors font-light"
+                className="px-3 py-1 bg-bg-primary text-text-body rounded-md text-xs border border-[rgba(0,0,0,0.06)] hover:border-accent/40 transition-colors"
+                style={{ fontFamily: "var(--font-mono)" }}
               >
                 {tech}
               </span>

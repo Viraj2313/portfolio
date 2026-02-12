@@ -3,7 +3,7 @@ import AnimatedBackground from "./AnimatedBackground";
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <div className="min-h-screen bg-bg-primary relative overflow-hidden">
       <AnimatedBackground />
       <div className="relative" style={{ zIndex: 1 }}>
         {children}
@@ -13,4 +13,3 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
-

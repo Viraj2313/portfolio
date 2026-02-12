@@ -56,8 +56,9 @@ const CursorFollower = () => {
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: `translate(-50%, -50%) scale(${isMoving ? 0.9 : 1})`,
+        boxShadow: "0 0 8px rgba(74, 124, 89, 0.3)",
       }}
-      className="pointer-events-none fixed z-50 w-3 h-3 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-md transition-all duration-150 ease-out"
+      className="pointer-events-none fixed z-50 w-3 h-3 rounded-full bg-accent transition-all duration-150 ease-out"
     />
   );
 };
