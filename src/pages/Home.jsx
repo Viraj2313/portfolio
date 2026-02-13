@@ -56,11 +56,11 @@ const TypewriterText = ({ text, delay = 0, onComplete, className = "" }) => {
         <span
           className="inline-block w-[2px] bg-accent"
           style={{
-            height: '0.85em',
-            animation: 'cursorBlink 1s step-end infinite',
-            verticalAlign: 'baseline',
-            position: 'relative',
-            top: '0.1em'
+            height: "0.85em",
+            animation: "cursorBlink 1s step-end infinite",
+            verticalAlign: "baseline",
+            position: "relative",
+            top: "0.1em",
           }}
         />
       )}
@@ -123,10 +123,30 @@ const Home = () => {
   };
 
   const allSkills = [
-    { category: "Languages", icon: FaCode, items: skills.languages, color: "accent" },
-    { category: "Frameworks", icon: FaServer, items: skills.frameworks, color: "accent-teal" },
-    { category: "Databases", icon: FaDatabase, items: skills.databases, color: "accent" },
-    { category: "Tools", icon: FaLightbulb, items: skills.other, color: "accent-teal" },
+    {
+      category: "Languages",
+      icon: FaCode,
+      items: skills.languages,
+      color: "accent",
+    },
+    {
+      category: "Frameworks",
+      icon: FaServer,
+      items: skills.frameworks,
+      color: "accent-teal",
+    },
+    {
+      category: "Databases",
+      icon: FaDatabase,
+      items: skills.databases,
+      color: "accent",
+    },
+    {
+      category: "Tools",
+      icon: FaLightbulb,
+      items: skills.other,
+      color: "accent-teal",
+    },
   ];
 
   let globalIndex = 0;
@@ -150,7 +170,7 @@ const Home = () => {
                 onComplete={() => setLine1Done(true)}
               />
               <br />
-              <span className="relative inline-block text-accent">
+              <span className="relative inline-block text-accent whitespace-nowrap">
                 <span className="invisible">Viraj Mahajan</span>
                 <span className="absolute top-0 left-0 w-full">
                   {line1Done && (
@@ -180,20 +200,22 @@ const Home = () => {
             </h2>
 
             <div
-              className={`w-32 h-[2px] bg-accent mx-auto rounded-full mb-8 transition-all duration-700 ${line3Done ? 'opacity-100 animate-draw-line' : 'opacity-0'}`}
+              className={`w-32 h-[2px] bg-accent mx-auto rounded-full mb-8 transition-all duration-700 ${line3Done ? "opacity-100 animate-draw-line" : "opacity-0"}`}
             ></div>
           </div>
 
           <p
-            className={`text-lg md:text-xl text-text-body max-w-2xl mx-auto leading-relaxed transition-opacity duration-700 relative z-10 ${line3Done ? 'opacity-100' : 'opacity-0'}`}
+            className={`text-lg md:text-xl text-text-body max-w-2xl mx-auto leading-relaxed transition-opacity duration-700 relative z-10 ${line3Done ? "opacity-100" : "opacity-0"}`}
           >
-            Passionate about crafting scalable software with modern technologies. I bring ideas to life through clean code and innovative solutions.
+            Passionate about crafting scalable software with modern
+            technologies. I bring ideas to life through clean code and
+            innovative solutions.
           </p>
         </div>
 
         <div
           ref={skillsRef}
-          className={`bg-bg-card rounded-2xl p-8 md:p-12 border border-[rgba(0,0,0,0.06)] shadow-sm mb-12 transition-all duration-700 ${skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`bg-bg-card rounded-2xl p-8 md:p-12 border border-[rgba(0,0,0,0.06)] shadow-sm mb-12 transition-all duration-700 ${skillsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <h2
             className="text-3xl md:text-4xl font-bold text-center text-text-heading mb-12"
@@ -205,7 +227,9 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {allSkills.map((group) => (
               <div key={group.category} className="space-y-4">
-                <h3 className={`text-xl font-semibold text-${group.color} flex items-center`}>
+                <h3
+                  className={`text-xl font-semibold text-${group.color} flex items-center`}
+                >
                   <group.icon className="w-5 h-5 mr-3" />
                   {group.category}
                 </h3>
@@ -215,8 +239,11 @@ const Home = () => {
                     return (
                       <span
                         key={skill}
-                        className={`px-3 py-1.5 bg-bg-primary text-text-heading rounded-lg text-sm border border-[rgba(0,0,0,0.06)] hover:border-accent hover:shadow-sm transition-all duration-300 cursor-default ${skillsVisible ? `animate-fade-in-up stagger-${Math.min(idx + 1, 12)}` : 'opacity-0'}`}
-                        style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem" }}
+                        className={`px-3 py-1.5 bg-bg-primary text-text-heading rounded-lg text-sm border border-[rgba(0,0,0,0.06)] hover:border-accent hover:shadow-sm transition-all duration-300 cursor-default ${skillsVisible ? `animate-fade-in-up stagger-${Math.min(idx + 1, 12)}` : "opacity-0"}`}
+                        style={{
+                          fontFamily: "var(--font-mono)",
+                          fontSize: "0.8rem",
+                        }}
                       >
                         {skill}
                       </span>
@@ -230,7 +257,7 @@ const Home = () => {
 
         <div
           ref={connectRef}
-          className={`text-center transition-all duration-700 ${connectVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`text-center transition-all duration-700 ${connectVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           <h3
             className="text-2xl font-semibold text-text-heading mb-8"
