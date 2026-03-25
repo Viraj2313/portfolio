@@ -19,7 +19,7 @@ export const blogPosts = [
   </p>
   <p class="blog-para">
     After getting a fair idea of how llms worked, i started working on my own small gpt model,
-    i used python and pytorch to build my model, the model i created had about 60 million parameters (pretty awesome right)
+    i used python and pytorch to build my model, the model i created had about 100 million parameters (pretty awesome right)
     , i used datasets like wiki text, and alpaca dataset to train my model,
     after training my model for few days, i was able to get a small gpt model working, it was able to generate
     text based on the input given to it, it was a small model but it gave me a fair idea of how llms worked.
