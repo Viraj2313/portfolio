@@ -40,7 +40,7 @@ const Projects = () => {
       name: "Movie Pedia",
       description: `Movie Pedia is a React and ASP.NET Core app for exploring movies, viewing IMDb ratings, and getting AI-powered recommendations. It features a wishlist, like/dislike system, direct chat for sharing movies, a comments section for discussions, Google Social Login, and custom login.`,
       gitHubLink: "https://github.com/Viraj2313/Movie-Pedia",
-      livePreview: "https://moviepedia.virajdeveloper.online",
+      livePreview: "https://movie-pedia.duckdns.org",
       techStack: [
         "React",
         "ASP.NET Core",
@@ -57,7 +57,7 @@ const Projects = () => {
       description:
         "A secure and modern password manager built to help users safely store and manage their credentials. This project focuses on clean design and robust security principles.",
       gitHubLink: "https://github.com/Viraj2313/password-manager",
-      livePreview: "https://passwordmanager.virajdeveloper.online",
+      livePreview: "https://virajpasswordmanager.duckdns.org",
       techStack: [
         "React",
         "ASP.NET Core",
