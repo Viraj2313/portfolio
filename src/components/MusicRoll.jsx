@@ -5,6 +5,8 @@ const tracks = [
   { title: "Master of None", artist: "Beach House", spotifyId: "3stWWPN41byqp8loPdy92u", appleId: "1248058067", appleUrl: "https://music.apple.com/us/song/1248058067", color: "#bc7650" },
   { title: "The Color Violet", artist: "Tory Lanez", spotifyId: "3azJifCSqg9fRij2yKIbWz", appleId: "1719899614", appleUrl: "https://music.apple.com/us/song/1719899614", color: "#9a7aba" },
   { title: "her", artist: "JVKE", spotifyId: "6G9YlbU3ByPJQvOFDRdwyM", appleId: "1764940884", appleUrl: "https://music.apple.com/us/song/1764940884", color: "#608781" },
+  { title: "Beautiful", artist: "Akon", spotifyId: "1GLx5tpDdwEFiA7KaikvX2", appleId: "1555536000", appleUrl: "https://music.apple.com/us/song/1555536000", color: "#bd9b59" },
+  { title: "Sweater Weather", artist: "The Neighbourhood", spotifyId: "2QjOHCTQ1Jl3zawyYOpxh6", appleId: "635016640", appleUrl: "https://music.apple.com/us/album/sweater-weather/635016635?i=635016640", color: "#60717b" },
 ];
 
 const MusicRoll = () => {
