@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Layout from "./components/Layout";
 import Resume from "./pages/Resume";
 import BlogPostLayout from "./pages/BlogPostLayout";
+import MusicRoll from "./components/MusicRoll";
 
 const MainContent = () => (
   <>
@@ -16,6 +17,7 @@ const MainContent = () => (
     <Projects />
     <Blogs />
     <Resume />
+    <MusicRoll />
   </>
 );
 

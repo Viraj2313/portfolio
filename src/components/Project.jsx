@@ -1,15 +1,18 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
+import ProjectArtwork from "./ProjectArtwork";
 
 const Project = ({
   name,
   description,
   gitHubLink,
   livePreview,
+  artwork,
   techStack = [],
 }) => {
   return (
-    <div className="bg-bg-card rounded-2xl p-8 border border-[rgba(0,0,0,0.06)] shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 group">
+    <div className="project-card bg-bg-card rounded-2xl p-8 border border-[rgba(0,0,0,0.06)] shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 group">
+      <ProjectArtwork type={artwork} label={`${name} visual`} />
       <div className="flex justify-between items-start mb-6">
         <h2
           className="text-2xl font-semibold text-text-heading group-hover:text-accent transition-colors"

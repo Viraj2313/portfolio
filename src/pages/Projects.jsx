@@ -9,6 +9,7 @@ const Projects = () => {
   const projects = [
     {
       name: "PortableEncryptor",
+      artwork: "terrain",
       description: `PortableEncryptor is a secure folder encryption tool that combines CLI encryption with browser-based decryption. Encrypt folders locally, upload to cloud drives safely, and decrypt on any device without installing software. Perfect for secure cloud storage with cross-device access.`,
       gitHubLink: "https://github.com/Viraj2313/portable-encryptor",
       livePreview: "",
@@ -23,6 +24,7 @@ const Projects = () => {
     },
     {
       name: "Transformer based Language Model",
+      artwork: "network",
       description: `Implemented a GPT-style transformer in PyTorch from scratch (self-attention, autoregressive decoding), scaled it to 100M parameters trained on the 1B-token Cosmopedia dataset, and fine-tuned it with SmolTalk and synthetic tech-focused instruction data.`,
       gitHubLink: "https://github.com/Viraj2313/gpt-model",
       livePreview: "",
@@ -38,6 +40,7 @@ const Projects = () => {
     },
     {
       name: "Movie Pedia",
+      artwork: "cinema",
       description: `Movie Pedia is a React and ASP.NET Core app for exploring movies, viewing IMDb ratings, and getting AI-powered recommendations. It features a wishlist, like/dislike system, direct chat for sharing movies, a comments section for discussions, Google Social Login, and custom login.`,
       gitHubLink: "https://github.com/Viraj2313/Movie-Pedia",
       livePreview: "https://movie-pedia.duckdns.org",
@@ -54,6 +57,7 @@ const Projects = () => {
     },
     {
       name: "Password Manager",
+      artwork: "vault",
       description:
         "A secure and modern password manager built to help users safely store and manage their credentials. This project focuses on clean design and robust security principles.",
       gitHubLink: "https://github.com/Viraj2313/password-manager",
@@ -98,6 +102,7 @@ const Projects = () => {
             <div key={index} className="flex justify-center">
               <Project
                 name={project.name}
+                artwork={project.artwork}
                 description={project.description}
                 gitHubLink={project.gitHubLink}
                 livePreview={project.livePreview || ""}
